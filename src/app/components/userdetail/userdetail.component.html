@@ -1,0 +1,16 @@
+<div class="userdetail" *ngIf="post">
+  <p>Lead Name: {{post.name}} </p>
+  <p>Username: {{post.username}} </p>
+  <p>Phone: {{post.phone}} </p>
+  <p>Website: {{post.website}}</p>
+</div>
+
+<div class="taskdetail" *ngIf="taskdetail">
+  <p>{{taskdetail.userId}}</p>
+  <p>{{taskdetail.id}}</p>
+  <p>{{taskdetail.title}}</p>
+  <div class="container" *ngIf="taskdetail" >
+    <button class="btn btn-primary" (click)="onClick()" style="font-size: 12px;">Click here to invoke eventemitter</button>
+  </div>
+</div>
+

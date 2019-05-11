@@ -1,0 +1,14 @@
+.userdetail{
+    right: 5%;
+    position: fixed;
+    top: 10%;
+    border-style: solid;
+}
+
+.taskdetail{
+    right: 5%;
+    position: fixed;
+    top: 10%;
+    border-style: solid;
+    width: 10%;
+}

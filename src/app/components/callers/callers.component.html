@@ -1,0 +1,33 @@
+<div>
+    <button (click)="openaddLead()">Add Lead</button>
+    <div *ngIf=addLead>
+      <form #addUser = "ngForm" >
+        <input [(ngModel)]="name" placeholder="Enter User ID" class="form-control" name="name">
+        <input [(ngModel)]="id" placeholder="Enter ID" name="id">
+        <input [(ngModel)]="task" placeholder="Enter Task Name" name="task">
+        <button (click)="createNewTask()" >Submit</button>
+        
+      </form>
+    </div>
+
+    <div style="overflow-y:auto; max-height: 500px;">
+    <table >
+        <tr>
+          <th>User ID</th>
+          <th>Task ID</th>
+          <th>Task Name</th>
+          <th>Status</th>
+        </tr>
+        <tr *ngFor="let task of callertodo" (click)="isTask(task)" [class.selected]="task===selectedTask">
+            <td>{{task.id}}</td>
+            <td>{{task.userId}}</td>
+            <td>{{task.title}}</td>
+            <td>{{task.completed}}</td>
+        </tr>
+      </table>
+    </div>
+</div>
+<h2>{{sampleMessage}}</h2>
+
+<app-userdetail [taskdetail]="selectedTask" (notify)="onNotifyClick($event)"></app-userdetail>
+

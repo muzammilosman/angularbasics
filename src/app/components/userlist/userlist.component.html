@@ -1,0 +1,14 @@
+<table>
+  <tr>
+    <th>ID</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+  </tr>
+  <tr *ngFor="let post of posts" [class.selected]="post === selectedPost" (click)="isPost(post)">
+    <td>{{post.id}}</td>
+    <td>{{post.name}}</td>
+    <td>{{post.username}}</td>
+  </tr>
+</table>
+
+<app-userdetail [post]="selectedPost"></app-userdetail>

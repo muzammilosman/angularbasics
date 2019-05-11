@@ -1,0 +1,26 @@
+<div class="sidebar">
+  <div class="userdetails">
+    <p>
+      FALQON
+    </p>
+      <div>Username: {{name}}</div>
+      <div>Email: {{email}}</div>
+  </div>   
+  <ul class="menu-items">
+    <a href="#"><li *ngFor="let hobby of hobbies; let i = index">{{i+1}}: {{hobby}}</li></a>
+  </ul>
+  <button (click)="addSidebar()">Add Sidebar Element</button>
+  <div *ngIf=isEdit>
+    <form (submit)=addtolist(listitem.value)>
+      <input type="text" placeholder="Enter list item" #listitem>
+    </form>
+  </div>
+    
+  <div class="setemail">
+    <input type="text" placeholder="enter email:" [(ngModel)]="email">
+  </div>
+      
+
+</div>
+    
+
