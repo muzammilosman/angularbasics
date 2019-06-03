@@ -11,6 +11,7 @@
     </div>
 
     <div style="overflow-y:auto; max-height: 500px;">
+      <h1>{{mymessage}}</h1>
     <table >
         <tr>
           <th>User ID</th>
@@ -29,5 +30,12 @@
 </div>
 <h2>{{sampleMessage}}</h2>
 
-<app-userdetail [taskdetail]="selectedTask" (notify)="onNotifyClick($event)"></app-userdetail>
+<div class="userdetail">
+  <form #updateUser = "ngForm">
+    <input type="text" [(ngModel)]="uservalue" placeholder="Enter User Value" name="userupdated">
+    <button (click)="updateUserValue()">Change User Name</button>
+  </form>
+</div>
+
+<app-userdetail [taskdetail]="selectedTask" (notify)="mymessage=$event"></app-userdetail>
 

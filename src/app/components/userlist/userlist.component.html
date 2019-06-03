@@ -1,3 +1,5 @@
+<h1>{{mymessage}}</h1>
+<h2>{{userValue}} is the user value</h2>
 <table>
   <tr>
     <th>ID</th>
@@ -11,4 +13,4 @@
   </tr>
 </table>
 
-<app-userdetail [post]="selectedPost"></app-userdetail>
+<app-userdetail [post]="selectedPost" (notify)="mymessage=$event"></app-userdetail>

@@ -17,6 +17,9 @@ export class CallersComponent implements OnInit {
   selectedTask: any;
 
   sampleMessage: string;
+  mymessage: string;
+
+  uservalue: string;
 
   constructor(private dataService: DataService) { }
 
@@ -43,6 +46,11 @@ export class CallersComponent implements OnInit {
 
   onNotifyClick(message: string) {
     this.sampleMessage = message;
+  }
+
+  updateUserValue() {
+    console.log('this is uservalue in callers component' + this.uservalue);
+    this.dataService.updateUser(this.uservalue);
   }
 
 

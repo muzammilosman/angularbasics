@@ -17,7 +17,7 @@ import { AuthGuard } from '../app/auth.guard';
 const appRoutes: Routes = [
   {path: '', component: SidebarComponent},
   {path: 'userlist', component: UserlistComponent},
-  {path: 'callers', component: CallersComponent, canActivate: [AuthGuard]}
+  {path: 'callers', component: CallersComponent}
 ];
 
 @NgModule({

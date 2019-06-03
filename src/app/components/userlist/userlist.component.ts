@@ -10,6 +10,9 @@ import { analyzeAndValidateNgModules } from '@angular/compiler';
 export class UserlistComponent implements OnInit {
   posts: any;
   selectedPost: any;
+  mymessage: any;
+
+  userValue: string;
 
   constructor(private dataService: DataService) { }
 
@@ -18,10 +21,20 @@ export class UserlistComponent implements OnInit {
     this.posts = posts;
     console.log(this.posts);
     });
+
+    this.dataService.cast.subscribe(data => {
+      console.log('User value' + data);
+      this.userValue  = data;
+    });
   }
 
   isPost(post) {
     this.selectedPost = post;
     this.dataService.getDetailContent(post);
   }
+
+  newUserValue(data) {
+    this.dataService.updateUser(data);
+  }
+
 }

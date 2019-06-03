@@ -3,6 +3,9 @@
   <p>Username: {{post.username}} </p>
   <p>Phone: {{post.phone}} </p>
   <p>Website: {{post.website}}</p>
+  <div class="container" *ngIf="taskdetail" >
+    <button class="btn btn-primary" (click)="onClick()" style="font-size: 12px;">Click here to invoke eventemitter</button>
+  </div>
 </div>
 
 <div class="taskdetail" *ngIf="taskdetail">
